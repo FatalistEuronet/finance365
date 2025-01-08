@@ -4,6 +4,8 @@ body {
   margin: 0;
 }
 .header {
+  position: fixed;
+  top: 0;
   padding: 0px;
   text-align: left;
   background: #1abc9c;
