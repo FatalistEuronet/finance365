@@ -7,7 +7,7 @@
 
 /* Body & Layout */
 body {
-  font-family: Abadi, sans-serif;
+  font-family: 'Abadi', sans-serif; /* Changed to Abadi font */
   background-color: #f4f4f4;
 }
 
@@ -23,9 +23,11 @@ header {
 header .logo a {
   color: #fff;
   text-decoration: none;
-  logo {
-  width: 80px;  /* Maintain aspect ratio */
-  height: 80px; /* Adjust height as needed */
+}
+
+header .logo a img {
+  width: 80px;  /* Make logo smaller */
+  height: auto; /* Maintain aspect ratio */
 }
 
 header nav ul {
