@@ -1,84 +1,105 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body & Layout */
 body {
-  font-family: Verdana, sans-serif;
-  background-color: #FFFFFF;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  color: #f4a261;
+}
+
+/* Mission Section */
+#mission {
+  background-color: #1f2a44;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+#mission h1 {
+  font-size: 3rem;
   margin: 0;
 }
-.header {
-  position: sticky;
-  margin: 0px;
-  top: 0px;
-  left: 0;
-  right: 0;
-  height: 80px;
-  padding: 0px;
-  text-align: left;
-  background: #1abc9c;
-  color: white;
-  font-size: 30px;
-}
-.footer {
-  position: absolute;
-  margin: 0px;
-  bottom: 0px;
-  left: 0;
-  right: 0;
-  height: 80px;
-  padding: 0px;
-  text-align: left;
-  background: #ff0000;
-  color: white;
-  font-size: 30px;
-}
-h1 {
-  margin: 0px;
-  color: #ff0;
-  text-align: left;
-  font-size: 60px
-}
-p {
-  font-size: 20px
-  line-height: 1.5
-  color: #000;
-}
-a {
-  text-decoration: none;
-}
-/* Dropdown Button */
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+
+/* Video & Content Section */
+#content {
+  padding: 40px 20px;
+  text-align: center;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  display: inline-block;
+.videos {
+  margin-bottom: 40px;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+.video-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+.video-container iframe {
+  border-radius: 8px;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.text-about {
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  border-radius: 8px;
+}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.text-about h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.text-about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
