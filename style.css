@@ -24,7 +24,7 @@ header .logo a {
   color: #fff;
   text-decoration: none;
   logo {
-  width: auto;  /* Maintain aspect ratio */
+  width: 80px;  /* Maintain aspect ratio */
   height: 80px; /* Adjust height as needed */
 }
 
