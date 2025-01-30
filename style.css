@@ -8,14 +8,14 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    {align-items: center;}
+    text-align: center;
     background-color: #333;
     padding: 10px 20px;
 }
 
 .logo {
-    width: 10vh;
-    height: 100%;
+    width: 10px;
+    height: 10px;
 }
 
 .nav-buttons {
