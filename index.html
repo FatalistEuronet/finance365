@@ -1,56 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Mission</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Mission</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <header>
-    <div class="logo">
-      <a href="https://financialeducation365.org"> <img src="image.png" alt="Logo" id="logo"> </a> 
+
+<header>
+    <img src="logo.png" alt="Logo" class="logo"> <!-- Replace 'logo.png' with your logo file -->
+    <div class="nav-buttons">
+        <button class="nav-button">Donate</button>
+        <button class="nav-button">Resources</button>
+        <button class="nav-button">About Us</button>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#donate">Donate</a></li>
-        <li><a href="#resources">Resources</a></li>
-        <li><a href="#about">About Us</a></li>
-      </ul>
-    </nav>
-  </header>
+</header>
 
-  <!-- Main Content -->
-  <main>
-    <section id="mission">
-      <h1>Our Mission</h1>
-    </section>
+<h1 class="mission-title">Our Mission</h1>
 
-    <!-- Videos and Mission Text -->
-    <section id="content">
-      <div class="videos">
-        <h2>Watch Our Videos</h2>
-        <div class="video-container">
-          <!-- Example video embeds -->
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
+<div class="video-section">
+    <div class="video-container">
+        <video controls>
+            <source src="video1.mp4" type="video/mp4"> <!-- Replace 'video1.mp4' with your video file -->
+            Your browser does not support the video tag.
+        </video>
+        <p>Description for Video 1</p>
+    </div>
+    <div class="video-container">
+        <video controls>
+            <source src="video2.mp4" type="video/mp4"> <!-- Replace 'video2.mp4' with your video file -->
+            Your browser does not support the video tag.
+        </video>
+        <p>Description for Video 2</p>
+    </div>
+    <div class="video-container">
+        <video controls>
+            <source src="video3.mp4" type="video/mp4"> <!-- Replace 'video3.mp4' with your video file -->
+            Your browser does not support the video tag.
+        </video>
+        <p>Description for Video 3</p>
+    </div>
+</div>
 
-      <div class="text-about">
-        <h2>About Our Mission</h2>
-        <p>
-          Here you can describe your mission, values, and goals. Make it personal and inviting!
-          The goal is to communicate your message clearly to visitors and inspire them to take action.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Financial Education 365. All Rights Reserved.</p>
-  </footer>
 </body>
 </html>
