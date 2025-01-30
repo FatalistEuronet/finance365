@@ -8,14 +8,14 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    text-align: center;
+    align-items: center; /* Centers items vertically */
     background-color: #333;
     padding: 10px 20px;
 }
 
 .logo {
-    width: 10px;
-    height: 10px;
+    width: 50px;  /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .nav-buttons {
@@ -42,7 +42,6 @@ header {
     font-size: 2.5em;
     margin: 20px 0;
 }
-
 .video-section {
     display: flex;
     flex-direction: column;
