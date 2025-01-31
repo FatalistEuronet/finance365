@@ -2,63 +2,76 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
-
-Screenshot 2025-01-30 164710.png {
-    width: 10%;  /* Adjust size */
-    height: auto; /* Maintain aspect ratio */
-    display: block;
 }
 
 header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: right;
+}
+
+#logo-link {
+    float: left;
+    margin-top: 10px;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
 }
 
-.nav-buttons {
+nav li {
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    background-image: linear-gradient(to bottom, #333, #555);
+    background-size: 100% 300px;
+    background-position: 0% 100%;
+    height: 100vh;
     display: flex;
-    gap: 15px;
-    margin-left: auto; /* This should push buttons to the right */
-}
-
-.nav-button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 15px 20px; /* Makes buttons bigger */
-    font-size: 1.2em; /* Increases text size */
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.nav-button:hover {
-    background-color: #0056b3;
-}
-
-.mission-title {
-    text-align: center;
-    font-size: 2.5em;
-    margin: 20px 0;
-}
-.video-section {
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 20px;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.videos {
+    padding: 2em;
 }
 
 .video-container {
-    margin: 20px 0;
-    max-width: 800px;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-video {
-    width: 100%;
-    height: auto;
+.video-container iframe {
+    margin: 20px;
+}
+
+.about {
+    padding: 2em;
+}
+
+.about h2 {
+    margin-top: 0;
 }
