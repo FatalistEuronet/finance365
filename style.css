@@ -22,7 +22,7 @@ Screenshot 2025-01-30 164710.png {
 .nav-buttons {
     display: flex;
     gap: 20px;
-    {float: right}
+    float: right;
 }
 
 .nav-button {
