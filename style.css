@@ -14,7 +14,7 @@ header {
 }
 
 image.png {
-    width: 100%;  /* Adjust size */
+    width: 10%;  /* Adjust size */
     height: auto; /* Maintain aspect ratio */
     display: block;
 }
