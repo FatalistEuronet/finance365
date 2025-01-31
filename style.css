@@ -14,8 +14,9 @@ header {
 }
 
 image.png {
-    width: 1px;  /* Adjust size */
+    width: 100%;  /* Adjust size */
     height: auto; /* Maintain aspect ratio */
+    display: block;
 }
 
 .nav-buttons {
