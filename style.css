@@ -32,7 +32,7 @@ Screenshot 2025-01-30 164710.png {
     padding: 15px 20px; /* Make buttons larger */
     font-size: 1.2em; /* Increase text size */
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 50px;
     transition: background-color 0.3s;
 }
 
