@@ -75,3 +75,47 @@ nav li {
 .about h2 {
     margin-top: 0;
 }
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+.footer-social a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+}
+.footer-social a:hover {
+    color: #fff;
+}
+
+.footer-social a {
+    font-size: 20px;
+}
+
+.footer-copy {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-social {
+        margin-top: 10px;
+    }
+}
