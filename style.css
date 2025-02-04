@@ -1,48 +1,83 @@
-/* Global font change */
+/* General styling for body */
 body {
-    font-family: 'Roboto', sans-serif; /* Smooth and professional font */
+    font-family: 'Roboto', sans-serif; /* Smooth, professional font */
     margin: 0;
     padding: 0;
 }
 
-/* Center "Our Mission" text */
-.about h2 {
-    margin-top: 0;
-    text-align: center; /* Centering the text */
+header {
+    position: relative;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
 }
 
-/* Remove the "Videos" section */
-.videos {
-    display: none; /* Hide the videos section */
+#logo-link {
+    display: inline-block;
 }
 
-/* Button Styles for Donate, About Us, and Resources */
-nav .nav-link {
-    background-color: #28a745; /* Green button background */
-    color: white; /* White text */
-    padding: 10px 20px; /* Padding to give button appearance */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
+#logo {
+    height: 50px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+}
+
+.hero {
+    background-color: #f4f4f4;
+    padding: 60px 0;
     text-align: center;
 }
 
-nav .nav-link:hover {
-    background-color: #218838; /* Darker green on hover */
+.mission-title {
+    font-size: 36px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Additional button styling for responsiveness */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .footer-social {
-        margin-top: 10px;
-    }
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
-    /* Make buttons stack vertically on smaller screens */
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
+button:hover {
+    background-color: #218838;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #28a745;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 14px;
 }
