@@ -1,6 +1,6 @@
 /* General styling for body */
 body {
-    font-family: 'Roboto', sans-serif; /* Smooth, professional font */
+    font-family: 'Verdana', sans-serif; /* Smooth, professional font */
     margin: 0;
     padding: 0;
 }
@@ -36,7 +36,7 @@ header {
 .mission-title {
     font-size: 36px;
     color: #333;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial Black', sans-serif;
 }
 
 button {
