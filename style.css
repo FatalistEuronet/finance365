@@ -1,83 +1,24 @@
-/* General styling for body */
 body {
-    font-family: 'Verdana', sans-serif; /* Smooth, professional font */
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-header {
-    position: relative;
-    background-color: #333;
-    padding: 10px 20px;
-    color: white;
+.donate-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #3B7D23;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
 
-#logo-link {
-    display: inline-block;
-}
-
-#logo {
-    height: 50px;
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    margin: 5px;
-}
-
-.hero {
-    background-color: #f4f4f4;
-    padding: 60px 0;
-    text-align: center;
-}
-
-.mission-title {
-    font-size: 36px;
-    color: #333;
-    font-family: 'Arial Black', sans-serif;
-}
-
-button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-.footer-social a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-}
-
-.footer-social a:hover {
-    color: #28a745;
-}
-
-.footer-copy {
-    margin-top: 20px;
-    font-size: 14px;
+.donate-button:hover {
+  background-color: #336d1f;
 }
