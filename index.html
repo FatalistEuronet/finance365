@@ -3,17 +3,693 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Education 365</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <title>Navigation Dropdown Menu</title>
+    
+    <!-- ========================================= -->
+    <!-- CSS STYLES SECTION                       -->
+    <!-- ========================================= -->
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main Navigation Container */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0;
+            margin-top: 50px;
+            flex-wrap: nowrap;
+        }
+
+        /* Individual Dropdown Container */
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Button Base Styles */
+        .dropdown-btn {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border: none;
+            padding: 15px 25px;
+            border-radius: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            min-width: 120px;
+            justify-content: space-between;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* First and Last Button Rounded Corners */
+        .dropdown-container:first-child .dropdown-btn {
+            border-radius: 12px 0 0 12px;
+        }
+
+        .dropdown-container:last-child .dropdown-btn {
+            border-radius: 0 12px 12px 0;
+            border-right: none;
+        }
+
+        /* Single Button (if only one) */
+        .dropdown-container:only-child .dropdown-btn {
+            border-radius: 12px;
+            border-right: none;
+        }
+
+        /* Button Hover Effects */
+        .dropdown-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .dropdown-btn:hover::before {
+            left: 100%;
+        }
+
+        .dropdown-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+
+        .dropdown-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Active Button State */
+        .dropdown-container.active .dropdown-btn {
+            background: linear-gradient(145deg, #4a90e2, #357abd);
+            color: white;
+            transform: translateY(-2px);
+            z-index: 100;
+        }
+
+        /* Arrow Styles */
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 7px solid #666;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform-origin: center center;
+        }
+
+        .dropdown-container.active .arrow {
+            transform: rotate(180deg);
+            border-top-color: white;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 0px);
+            left: 0;
+            min-width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1),
+                        0 5px 15px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-top: none;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .dropdown-container.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Dropdown Menu Items */
+        .dropdown-item {
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 14px;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .dropdown-item:hover::before {
+            left: 100%;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4a90e2;
+            transform: translateX(3px);
+        }
+
+        /* Specific Button Styling */
+        .about-btn { min-width: 100px; }
+        .attend-btn { min-width: 100px; }
+        .contribute-btn { min-width: 120px; }
+        .resources-btn { min-width: 120px; }
+        .user-btn { min-width: 90px; }
+
+        /* Wide Dropdown for Resources */
+        .resources-dropdown .dropdown-menu {
+            min-width: 250px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 2px;
+            }
+            
+            .dropdown-btn {
+                padding: 12px 18px;
+                font-size: 14px;
+                min-width: 90px;
+            }
+            
+            .dropdown-menu {
+                min-width: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 2px;
+            }
+            
+            .dropdown-container {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .dropdown-btn {
+                width: 100%;
+                border-radius: 0;
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .dropdown-container:first-child .dropdown-btn {
+                border-radius: 12px 12px 0 0;
+            }
+            
+            .dropdown-container:last-child .dropdown-btn {
+                border-radius: 0 0 12px 12px;
+                border-bottom: none;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+                border-radius: 0;
+                border: none;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Loading Animation */
+        .dropdown-loading .arrow {
+            animation: spin 1s linear infinite;
+            border-top-color: #4a90e2;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Focus Styles for Accessibility */
+        .dropdown-btn:focus,
+        .dropdown-item:focus {
+            outline: 2px solid #4a90e2;
+            outline-offset: 2px;
+        }
+
+        /* Ripple Effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: rippleEffect 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
+
+<!-- ========================================= -->
+<!-- HTML STRUCTURE SECTION                   -->
+<!-- ========================================= -->
 <body>
-    <div class="dropdown">
-        <button class="dropdown-button">About</button>
-        <div class="dropdown-menu">
-            <a href="#about-us">About Us</a>
-            <a href="#our-leaders">Our Leaders</a>
-            <a href="#contact">Contact</a>
+    <h1 class="page-title">Navigation Menu</h1>
+    
+    <div class="nav-container">
+        <!-- About Dropdown -->
+        <div class="dropdown-container about-dropdown" id="dropdown-about">
+            <button class="dropdown-btn about-btn">
+                <span>About</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">About Us</a>
+                <a href="#" class="dropdown-item">Our Leaders</a>
+                <a href="#" class="dropdown-item">Contact Us</a>
+            </div>
+        </div>
+
+        <!-- Attend Dropdown -->
+        <div class="dropdown-container attend-dropdown" id="dropdown-attend">
+            <button class="dropdown-btn attend-btn">
+                <span>Attend</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Upcoming Events</a>
+            </div>
+        </div>
+
+        <!-- Contribute Dropdown -->
+        <div class="dropdown-container contribute-dropdown" id="dropdown-contribute">
+            <button class="dropdown-btn contribute-btn">
+                <span>Contribute</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Volunteer</a>
+                <a href="#" class="dropdown-item">Donate</a>
+            </div>
+        </div>
+
+        <!-- Resources Dropdown -->
+        <div class="dropdown-container resources-dropdown" id="dropdown-resources">
+            <button class="dropdown-btn resources-btn">
+                <span>Resources</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Gallery</a>
+                <a href="#" class="dropdown-item">Financial Literacy Resources</a>
+                <a href="#" class="dropdown-item">Leadership Development Resources</a>
+                <a href="#" class="dropdown-item">Career Development Resources</a>
+            </div>
+        </div>
+
+        <!-- User Dropdown -->
+        <div class="dropdown-container user-dropdown" id="dropdown-user">
+            <button class="dropdown-btn user-btn">
+                <span>User</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Profile</a>
+                <a href="#" class="dropdown-item">Volunteer</a>
+                <a href="#" class="dropdown-item">Sign Out</a>
+            </div>
         </div>
     </div>
+
+    <!-- ========================================= -->
+    <!-- JAVASCRIPT FUNCTIONALITY SECTION         -->
+    <!-- ========================================= -->
+    <script>
+        class NavigationDropdown {
+            constructor() {
+                this.containers = document.querySelectorAll('.dropdown-container');
+                this.activeDropdown = null;
+                this.isAnimating = false;
+                
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+                this.setupAccessibility();
+            }
+
+            bindEvents() {
+                // Bind events for each dropdown
+                this.containers.forEach(container => {
+                    const button = container.querySelector('.dropdown-btn');
+                    const menu = container.querySelector('.dropdown-menu');
+                    const items = container.querySelectorAll('.dropdown-item');
+
+                    // Button click event
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        this.handleButtonClick(container);
+                    });
+
+                    // Button keyboard events
+                    button.addEventListener('keydown', (e) => {
+                        this.handleButtonKeydown(e, container);
+                    });
+
+                    // Menu item events
+                    items.forEach((item, index) => {
+                        item.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            this.handleItemClick(item, container);
+                        });
+
+                        item.addEventListener('keydown', (e) => {
+                            this.handleItemKeydown(e, container, index);
+                        });
+                    });
+
+                    // Add ripple effect
+                    this.setupRippleEffect(button);
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.dropdown-container')) {
+                        this.closeAllDropdowns();
+                    }
+                });
+
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    if (this.activeDropdown) {
+                        this.updateMenuPosition(this.activeDropdown);
+                    }
+                });
+            }
+
+            setupAccessibility() {
+                this.containers.forEach(container => {
+                    const button = container.querySelector('.dropdown-btn');
+                    const menu = container.querySelector('.dropdown-menu');
+                    const items = container.querySelectorAll('.dropdown-item');
+
+                    button.setAttribute('aria-haspopup', 'true');
+                    button.setAttribute('aria-expanded', 'false');
+                    menu.setAttribute('role', 'menu');
+                    
+                    items.forEach((item, index) => {
+                        item.setAttribute('role', 'menuitem');
+                        item.setAttribute('tabindex', '-1');
+                    });
+                });
+            }
+
+            setupRippleEffect(button) {
+                button.addEventListener('click', (e) => {
+                    const ripple = document.createElement('span');
+                    const rect = button.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.classList.add('ripple');
+                    
+                    button.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            }
+
+            handleButtonClick(container) {
+                if (this.isAnimating) return;
+
+                if (this.activeDropdown === container) {
+                    // Close the active dropdown
+                    this.closeDropdown(container);
+                } else {
+                    // Close any open dropdown and open the clicked one
+                    this.closeAllDropdowns();
+                    this.openDropdown(container);
+                }
+            }
+
+            handleButtonKeydown(e, container) {
+                const items = container.querySelectorAll('.dropdown-item');
+                
+                switch (e.key) {
+                    case 'Enter':
+                    case ' ':
+                        e.preventDefault();
+                        this.handleButtonClick(container);
+                        break;
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        if (this.activeDropdown !== container) {
+                            this.closeAllDropdowns();
+                            this.openDropdown(container);
+                        }
+                        if (items.length > 0) {
+                            items[0].focus();
+                        }
+                        break;
+                    case 'Escape':
+                        this.closeAllDropdowns();
+                        break;
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        this.focusPreviousButton(container);
+                        break;
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        this.focusNextButton(container);
+                        break;
+                }
+            }
+
+            handleItemKeydown(e, container, currentIndex) {
+                const items = container.querySelectorAll('.dropdown-item');
+                const button = container.querySelector('.dropdown-btn');
+                
+                switch (e.key) {
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        const nextIndex = (currentIndex + 1) % items.length;
+                        items[nextIndex].focus();
+                        break;
+                    case 'ArrowUp':
+                        e.preventDefault();
+                        const prevIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+                        items[prevIndex].focus();
+                        break;
+                    case 'Escape':
+                        e.preventDefault();
+                        this.closeDropdown(container);
+                        button.focus();
+                        break;
+                    case 'Tab':
+                        if (!e.shiftKey && currentIndex === items.length - 1) {
+                            this.closeDropdown(container);
+                        }
+                        break;
+                }
+            }
+
+            handleItemClick(item, container) {
+                const text = item.textContent.trim();
+                console.log(`Selected: ${text}`);
+                
+                // Add visual feedback
+                item.style.background = 'rgba(74, 144, 226, 0.2)';
+                item.style.transform = 'scale(0.98)';
+                
+                setTimeout(() => {
+                    this.closeDropdown(container);
+                    item.style.background = '';
+                    item.style.transform = '';
+                }, 150);
+            }
+
+            openDropdown(container) {
+                if (this.isAnimating) return;
+                
+                this.isAnimating = true;
+                this.activeDropdown = container;
+                
+                container.classList.add('active');
+                const button = container.querySelector('.dropdown-btn');
+                button.setAttribute('aria-expanded', 'true');
+                
+                this.updateMenuPosition(container);
+                
+                // Animate menu items
+                const items = container.querySelectorAll('.dropdown-item');
+                items.forEach((item, index) => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(-5px)';
+                    
+                    setTimeout(() => {
+                        item.style.transition = 'all 0.3s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, index * 30);
+                });
+                
+                setTimeout(() => {
+                    this.isAnimating = false;
+                }, 400);
+            }
+
+            closeDropdown(container) {
+                if (this.isAnimating) return;
+                
+                this.isAnimating = true;
+                
+                container.classList.remove('active');
+                const button = container.querySelector('.dropdown-btn');
+                button.setAttribute('aria-expanded', 'false');
+                
+                if (this.activeDropdown === container) {
+                    this.activeDropdown = null;
+                }
+                
+                // Reset item styles
+                const items = container.querySelectorAll('.dropdown-item');
+                items.forEach(item => {
+                    item.style.transition = '';
+                    item.style.opacity = '';
+                    item.style.transform = '';
+                });
+                
+                setTimeout(() => {
+                    this.isAnimating = false;
+                }, 400);
+            }
+
+            closeAllDropdowns() {
+                this.containers.forEach(container => {
+                    if (container.classList.contains('active')) {
+                        this.closeDropdown(container);
+                    }
+                });
+            }
+
+            updateMenuPosition(container) {
+                const menu = container.querySelector('.dropdown-menu');
+                const rect = container.getBoundingClientRect();
+                const menuRect = menu.getBoundingClientRect();
+                const viewportWidth = window.innerWidth;
+                
+                // Reset position
+                menu.style.left = '0';
+                
+                // Check if menu would go off screen to the right
+                if (rect.left + menuRect.width > viewportWidth) {
+                    menu.style.left = 'auto';
+                    menu.style.right = '0';
+                }
+            }
+
+            focusNextButton(currentContainer) {
+                const containers = Array.from(this.containers);
+                const currentIndex = containers.indexOf(currentContainer);
+                const nextIndex = (currentIndex + 1) % containers.length;
+                const nextButton = containers[nextIndex].querySelector('.dropdown-btn');
+                nextButton.focus();
+            }
+
+            focusPreviousButton(currentContainer) {
+                const containers = Array.from(this.containers);
+                const currentIndex = containers.indexOf(currentContainer);
+                const prevIndex = currentIndex === 0 ? containers.length - 1 : currentIndex - 1;
+                const prevButton = containers[prevIndex].querySelector('.dropdown-btn');
+                prevButton.focus();
+            }
+        }
+
+        // Initialize the navigation dropdown system
+        document.addEventListener('DOMContentLoaded', () => {
+            const navigation = new NavigationDropdown();
+            
+            // Optional: Add keyboard shortcut for quick access
+            document.addEventListener('keydown', (e) => {
+                if (e.altKey && e.key >= '1' && e.key <= '5') {
+                    e.preventDefault();
+                    const index = parseInt(e.key) - 1;
+                    const containers = document.querySelectorAll('.dropdown-container');
+                    if (containers[index]) {
+                        const button = containers[index].querySelector('.dropdown-btn');
+                        button.focus();
+                        button.click();
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
