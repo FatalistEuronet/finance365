@@ -304,6 +304,15 @@
             animation: rippleEffect 0.6s linear;
             pointer-events: none;
         }
+        .logo-link {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .logo-link img {
+            height: 50px; /* adjust size as needed */
+        }
 
         @keyframes rippleEffect {
             to {
@@ -318,6 +327,9 @@
 <!-- HTML STRUCTURE SECTION                   -->
 <!-- ========================================= -->
 <body>
+    <a href="https://financialeducation365.org" class="logo-link">
+        <img src="your-image.png" alt="Logo">
+    </a>
     <h1 class="page-title">Financial Education 365</h1>
     
     <div class="nav-container">
