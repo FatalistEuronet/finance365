@@ -1,84 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Education 365!</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Financial Education 365</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .nav-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background-color: #333;
+      padding: 10px;
+    }
+
+    .dropdown-container {
+      position: relative;
+    }
+
+    .dropdown-btn {
+      background-color: #3B7D23;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+      z-index: 1;
+      min-width: 160px;
+      top: 40px;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-container:hover .dropdown-menu {
+      display: block;
+    }
+
+    form input, form select, form button {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    button.green {
+      background-color: #3B7D23;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .event {
+      background-color: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .hidden { display: none; }
+  </style>
 </head>
-
-<!-- ========================================= -->
-<!-- HTML STRUCTURE SECTION                   -->
-<!-- ========================================= -->
 <body>
-    <h1 class="page-title">Financial Education 365</h1>
-    <a href="https://www.financialeducation365.org" class="logo-link">
-        <img src="Screenshot 2025-08-01 173612.png" alt="Logo">
-    </a>
-    <div class="nav-container">
-        <!-- About Dropdown -->
-        <div class="dropdown-container about-dropdown" id="dropdown-about">
-            <button class="dropdown-btn about-btn">
-                <span>About</span>
-                <div class="arrow"></div>
-            </button>
-            <div class="dropdown-menu">
-                <a href="aboutus.html" class="dropdown-item">About Us</a>
-                <a href="ourleaders.html" class="dropdown-item">Our Leaders</a>
-                <a href="contactus.html" class="dropdown-item">Contact Us</a>
-            </div>
-        </div>
+  <h1>Financial Education 365</h1>
 
-        <!-- Attend Dropdown -->
-        <div class="dropdown-container attend-dropdown" id="dropdown-attend">
-            <button class="dropdown-btn attend-btn">
-                <span>Attend</span>
-                <div class="arrow"></div>
-            </button>
-            <div class="dropdown-menu">
-                <a href="upcomingevents.html" class="dropdown-item">Upcoming Events</a>
-            </div>
-        </div>
-
-        <!-- Contribute Dropdown -->
-        <div class="dropdown-container contribute-dropdown" id="dropdown-contribute">
-            <button class="dropdown-btn contribute-btn">
-                <span>Contribute</span>
-                <div class="arrow"></div>
-            </button>
-            <div class="dropdown-menu">
-                <a href="volunteer.html" class="dropdown-item">Volunteer</a>
-                <a href="donate.html" class="dropdown-item">Donate</a>
-            </div>
-        </div>
-
-        <!-- Resources Dropdown -->
-        <div class="dropdown-container resources-dropdown" id="dropdown-resources">
-            <button class="dropdown-btn resources-btn">
-                <span>Resources</span>
-                <div class="arrow"></div>
-            </button>
-            <div class="dropdown-menu">
-                <a href="gallery.html" class="dropdown-item">Gallery</a>
-                <a href="financial-literacy.html" class="dropdown-item">Financial Literacy Resources</a>
-                <a href="leadership-development.html" class="dropdown-item">Leadership Development Resources</a>
-                <a href="career-development.html" class="dropdown-item">Career Development Resources</a>
-            </div>
-        </div>
-
-        <!-- User Dropdown -->
-        <div class="dropdown-container user-dropdown" id="dropdown-user">
-            <button class="dropdown-btn user-btn">
-                <span>User</span>
-                <div class="arrow"></div>
-            </button>
-            <div class="dropdown-menu">
-                <a href="profile.html" class="dropdown-item">Profile</a>
-                <a href="volunteer.html" class="dropdown-item">Volunteer</a>
-                <a href="signout.html" class="dropdown-item">Sign Out</a>
-            </div>
-        </div>
+  <div class="nav-container">
+    <div class="dropdown-container">
+      <button class="dropdown-btn">About</button>
+      <div class="dropdown-menu">
+        <a href="#">About Us</a>
+        <a href="#">Our Leaders</a>
+        <a href="#">Contact Us</a>
+      </div>
     </div>
-    <script src="index.js"></script>
+
+    <div class="dropdown-container">
+      <button class="dropdown-btn">Attend</button>
+      <div class="dropdown-menu">
+        <a href="#">Upcoming Events</a>
+      </div>
+    </div>
+
+    <div class="dropdown-container">
+      <button class="dropdown-btn">Contribute</button>
+      <div class="dropdown-menu">
+        <a href="#" onclick="showPage('volunteer')">Volunteer</a>
+        <a href="#">Donate</a>
+      </div>
+    </div>
+
+    <div class="dropdown-container">
+      <button class="dropdown-btn">Resources</button>
+      <div class="dropdown-menu">
+        <a href="#">Gallery</a>
+        <a href="#">Financial Literacy</a>
+        <a href="#">Leadership</a>
+        <a href="#">Career</a>
+      </div>
+    </div>
+
+    <div class="dropdown-container">
+      <button class="dropdown-btn">User</button>
+      <div class="dropdown-menu" id="userMenu">
+        <a href="#" onclick="showPage('login')">Sign In</a>
+        <a href="#" onclick="showPage('signup')">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pages -->
+  <div id="login" class="hidden">
+    <h2>Don't Have an Account? <a href="#" onclick="showPage('signup')">Sign Up Here</a></h2>
+    <form onsubmit="loginUser(event)">
+      <input type="text" id="loginFirstName" placeholder="First Name" required />
+      <input type="text" id="loginLastName" placeholder="Last Name" required />
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <button type="submit" class="green">Login</button>
+    </form>
+  </div>
+
+  <div id="signup" class="hidden">
+    <h2>Create an Account</h2>
+    <form onsubmit="signupUser(event)">
+      <input type="text" id="firstName" placeholder="First Name" required />
+      <input type="text" id="lastName" placeholder="Last Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <select id="role">
+        <option>Volunteer</option>
+        <option>Audience</option>
+      </select>
+      <input type="text" id="school" placeholder="School" />
+      <select id="grade">
+        <option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option value="NA">N/A</option>
+      </select>
+      <div id="ageContainer" class="hidden">
+        <input type="number" id="age" placeholder="Age" />
+      </div>
+      <select id="gender">
+        <option>Male</option><option>Female</option><option>Other</option><option>Prefer Not to Share</option>
+      </select>
+      <button type="submit" class="green">Sign Up</button>
+    </form>
+  </div>
+
+  <div id="profile" class="hidden">
+    <h2>Your Profile</h2>
+    <form onsubmit="saveProfile(event)">
+      <input type="text" id="profileName" readonly />
+      <input type="text" id="profileEmail" readonly />
+      <select id="profileRole" disabled>
+        <option>Volunteer</option><option>Audience</option>
+      </select>
+      <select id="profileGrade" disabled>
+        <option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>NA</option>
+      </select>
+      <select id="profileGender" disabled>
+        <option>Male</option><option>Female</option><option>Other</option><option>Prefer Not to Share</option>
+      </select>
+      <button type="button" onclick="enableProfileEdit()">Edit</button>
+      <button id="saveBtn" class="green hidden">Save</button>
+    </form>
+  </div>
+
+  <div id="volunteer" class="hidden">
+    <h2>Volunteer Opportunities</h2>
+    <div id="eventList"></div>
+  </div>
+
+  <script>
+    let events = [
+      { id: 1, title: "Food Bank Drive", desc: "Pack and distribute food", count: 2, limit: 4 },
+      { id: 2, title: "Workshop", desc: "Teach financial literacy", count: 3, limit: 3 },
+      { id: 3, title: "Park Cleanup", desc: "Clean parks", count: 5, limit: null }
+    ];
+
+    const userMenu = document.getElementById('userMenu');
+    const gradeSelect = document.getElementById('grade');
+    const ageContainer = document.getElementById('ageContainer');
+
+    function showPage(id) {
+      document.querySelectorAll('div[id]').forEach(div => {
+        if (!div.classList.contains('nav-container')) div.classList.add('hidden');
+      });
+      document.getElementById(id).classList.remove('hidden');
+      if (id === 'volunteer') renderEvents();
+      if (id === 'profile') loadProfile();
+    }
+
+    gradeSelect.addEventListener('change', () => {
+      ageContainer.classList.toggle('hidden', gradeSelect.value !== 'NA');
+    });
+
+    function updateUserMenu() {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user && user.loggedIn) {
+        userMenu.innerHTML = `
+          <a href="#" onclick="showPage('profile')">Profile</a>
+          <a href="#" onclick="showPage('volunteer')">Volunteer</a>
+          <a href="#" onclick="logout()">Sign Out</a>
+        `;
+      }
+    }
+
+    function loginUser(e) {
+      e.preventDefault();
+      const user = {
+        firstName: loginFirstName.value,
+        lastName: loginLastName.value,
+        email: loginEmail.value,
+        loggedIn: true
+      };
+      localStorage.setItem('user', JSON.stringify(user));
+      updateUserMenu();
+      showPage('profile');
+    }
+
+    function signupUser(e) {
+      e.preventDefault();
+      const user = {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email: email.value,
+        role: role.value,
+        school: school.value,
+        grade: grade.value,
+        age: grade.value === 'NA' ? age.value : null,
+        gender: gender.value,
+        loggedIn: true
+      };
+      localStorage.setItem('user', JSON.stringify(user));
+      updateUserMenu();
+      showPage('profile');
+    }
+
+    function loadProfile() {
+      const user = JSON.parse(localStorage.getItem('user'));
+      profileName.value = `${user.firstName} ${user.lastName}`;
+      profileEmail.value = user.email;
+      profileRole.value = user.role;
+      profileGrade.value = user.grade;
+      profileGender.value = user.gender;
+    }
+
+    function enableProfileEdit() {
+      profileRole.disabled = false;
+      profileGrade.disabled = false;
+      profileGender.disabled = false;
+      saveBtn.classList.remove('hidden');
+    }
+
+    function saveProfile(e) {
+      e.preventDefault();
+      const user = JSON.parse(localStorage.getItem('user'));
+      user.role = profileRole.value;
+      user.grade = profileGrade.value;
+      user.gender = profileGender.value;
+      localStorage.setItem('user', JSON.stringify(user));
+      saveBtn.classList.add('hidden');
+      profileRole.disabled = true;
+      profileGrade.disabled = true;
+      profileGender.disabled = true;
+    }
+
+    function renderEvents() {
+      const container = document.getElementById('eventList');
+      container.innerHTML = '';
+      events.forEach(e => {
+        const full = e.limit !== null && e.count >= e.limit;
+        const div = document.createElement('div');
+        div.className = 'event';
+        div.innerHTML = `
+          <h3>${e.title}</h3>
+          <p>${e.desc}</p>
+          <p>${e.limit ? `${e.count}/${e.limit}` : `${e.count}/∞`}</p>
+          <button class="green" onclick="registerEvent(${e.id})" ${full ? 'disabled style="background:gray;"' : ''}>${full ? 'Full' : 'Register'}</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function registerEvent(id) {
+      const index = events.findIndex(e => e.id === id);
+      if (index !== -1 && (events[index].limit === null || events[index].count < events[index].limit)) {
+        events[index].count += 1;
+        renderEvents();
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem('user');
+      location.reload();
+    }
+
+    updateUserMenu();
+  </script>
 </body>
 </html>
