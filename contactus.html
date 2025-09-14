@@ -81,31 +81,170 @@
     </div>
     <script src="index.js"></script>
     
-        .contactus-header {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-bottom: 50px;
-            margin-left: 10000px
-            text-align: left;
-            margin-top: 50px
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us!</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Contact container specific styles */
+        .contact-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+            margin: 40px auto;
         }
-
-        .contactus-text {
-            font-size: 1.0em;
-            font-weight: normal;
-            max-width: 800px;
-            text-align: left;
-
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-    
+        
+        .contact-header {
+            color: #10b981;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .contact-text {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .email-highlight {
+            background: #10b981;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin: 20px 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .email-highlight:hover {
+            background: #059669;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.4);
+        }
+        
+        .contact-footer {
+            color: #666;
+            font-size: 1rem;
+            font-style: italic;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px solid rgba(16, 185, 129, 0.2);
+        }
     </style>
 </head>
+
 <body>
-    <div class="contactus-header">Contact Us</div>
-    <div class="contactus-text">
-        Got questions, ideas, or want to get involved? We’d love to hear from you!<dv>
-        Email us at:<dv>
-        customersupport@financialeducation365.org<dv>
-        Students, parents, and volunteers can reach out anytime with suggestions, collaboration requests, or questions about our events and programs. We’ll respond as quickly as possible.
+    <h1 class="page-title">Contact Us</h1>
+    <a href="https://www.financialeducation365.org" class="logo-link">
+        <img src="Screenshot 2025-08-01 173612.png" alt="Logo">
+    </a>
+    <div class="nav-container">
+        <!-- About Dropdown -->
+        <div class="dropdown-container about-dropdown" id="dropdown-about">
+            <button class="dropdown-btn about-btn">
+                <span>About</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="aboutus.html" class="dropdown-item">About Us</a>
+                <a href="ourleaders.html" class="dropdown-item">Our Leaders</a>
+                <a href="contactus.html" class="dropdown-item">Contact Us</a>
+            </div>
+        </div>
+
+        <!-- Attend Dropdown -->
+        <div class="dropdown-container attend-dropdown" id="dropdown-attend">
+            <button class="dropdown-btn attend-btn">
+                <span>Attend</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="upcomingevents.html" class="dropdown-item">Upcoming Events</a>
+            </div>
+        </div>
+
+        <!-- Contribute Dropdown -->
+        <div class="dropdown-container contribute-dropdown" id="dropdown-contribute">
+            <button class="dropdown-btn contribute-btn">
+                <span>Contribute</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="volunteer.html" class="dropdown-item">Volunteer</a>
+                <a href="donate.html" class="dropdown-item">Donate</a>
+            </div>
+        </div>
+
+        <!-- Resources Dropdown -->
+        <div class="dropdown-container resources-dropdown" id="dropdown-resources">
+            <button class="dropdown-btn resources-btn">
+                <span>Resources</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="gallery.html" class="dropdown-item">Gallery</a>
+                <a href="financial-literacy.html" class="dropdown-item">Financial Literacy Resources</a>
+                <a href="leadership-development.html" class="dropdown-item">Leadership Development Resources</a>
+                <a href="career-development.html" class="dropdown-item">Career Development Resources</a>
+            </div>
+        </div>
+
+        <!-- User Dropdown -->
+        <div class="dropdown-container user-dropdown" id="dropdown-user">
+            <button class="dropdown-btn user-btn">
+                <span>User</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="profile.html" class="dropdown-item">Profile</a>
+                <a href="volunteer.html" class="dropdown-item">Volunteer</a>
+                <a href="signout.html" class="dropdown-item">Sign Out</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Container Section -->
+    <div class="contact-container">
+        <h1 class="contact-header">Get In Touch</h1>
+        <p class="contact-text">
+            Got questions, ideas, or want to get involved? We'd love to hear from you!
+        </p>
+        <a href="mailto:customersupport@financialeducation365.org" class="email-highlight">
+            customersupport@financialeducation365.org
+        </a>
+        <p class="contact-text">
+            Students, parents, and volunteers can reach out anytime with suggestions, collaboration requests, or questions about our events and programs.
+        </p>
+        <div class="contact-footer">
+            We'll respond as quickly as possible.
+        </div>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
