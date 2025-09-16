@@ -80,6 +80,7 @@
         </div>
     </div>
     <script src="index.js"></script>
+    
     <!-- Add this CSS to your existing <style> section or style.css file -->
 <style>
 .events-section {
@@ -88,69 +89,127 @@
     padding: 20px;
 }
 
-.upcoming-events {
+.top-section {
+    display: flex;
+    gap: 40px;
     margin-bottom: 40px;
+    align-items: flex-start;
 }
 
-.upcoming-events h2 {
+.events-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.events-info h2 {
+    color: #10b981;
+    font-size: 28px;
     margin-bottom: 20px;
-    text-align: center;
-    font-size: 24px;
 }
 
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
+.events-info p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.events-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.events-info li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.events-info strong {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.upcoming-events {
+    flex: 0 0 350px;
+}
+
+.upcoming-events h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.events-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .event-card {
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .event-date {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
-    margin-bottom: 10px;
+    color: #10b981;
+    margin-bottom: 8px;
 }
 
 .event-title {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
 }
 
 .event-description {
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.4;
+    color: #666;
 }
 
 .calendar-container {
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .calendar-header {
     padding: 15px;
+    background: #10b981;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ddd;
 }
 
 .calendar-nav {
     background: none;
     border: none;
+    color: white;
     font-size: 24px;
     cursor: pointer;
     padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
 }
 
 .calendar-nav:hover {
-    background: rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.2);
 }
 
 .calendar-title {
@@ -162,21 +221,26 @@
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    background: white;
 }
 
 .day-header {
     padding: 10px 5px;
     text-align: center;
     font-weight: bold;
+    background: #f8f9fa;
     border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #666;
 }
 
 .day-cell {
     min-height: 80px;
-    border: 1px solid #ddd;
+    border: 1px solid #eee;
     padding: 5px;
     position: relative;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
 .day-cell:hover {
@@ -186,6 +250,7 @@
 .day-number {
     font-weight: bold;
     margin-bottom: 5px;
+    font-size: 14px;
 }
 
 .other-month {
@@ -198,30 +263,61 @@
 }
 
 .event-title-small {
-    font-size: 20px;
+    font-size: 11px;
     line-height: 1.1;
     margin-top: 2px;
+    background: #10b981;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .top-section {
+        flex-direction: column;
+    }
+    
+    .upcoming-events {
+        flex: none;
+    }
 }
 </style>
 
-<!-- Add this HTML section right after your navigation div (before the closing </body> tag) -->
 <div class="events-section">
-    <!-- Upcoming Events Cards -->
-    <div class="upcoming-events">
-        <h2>Next Two Months</h2>
-        <div class="events-grid">
-            <!-- EVENT CARD 1 - EDIT HERE -->
-            <div class="event-card">
-                <div class="event-date">September 20, 2025</div>
-                <div class="event-title">Investment Calculation I</div>
-                <div class="event-description">Something</div>
-            </div>
-            
-            <!-- EVENT CARD 2 - EDIT HERE -->
-            <div class="event-card">
-                <div class="event-date">October 18, 2025</div>
-                <div class="event-title">Investment Calculation II</div>
-                <div class="event-description">Something</div>
+    <!-- Top Section with Info and Upcoming Events -->
+    <div class="top-section">
+        <!-- Events Information (Left Side) -->
+        <div class="events-info">
+            <h2>Join Our Events</h2>
+            <p>Each week, Financial Education 365 hosts events that help students build financial knowledge, practice leadership, and explore future opportunities.</p>
+            <p>Click on any event in our <strong>calendar</strong> to learn more and sign up!</p>
+            <p><strong>Examples of what we offer:</strong></p>
+            <ul>
+                <li><strong>• Finance Workshops</strong> — budgeting, saving, investing, and more</li>
+                <li><strong>• Leadership Projects</strong> — team events, outreach, and presentations</li>
+                <li><strong>• Career Exploration</strong> — guest speakers and college/career insights</li>
+            </ul>
+        </div>
+
+        <!-- Upcoming Events Cards (Right Side) -->
+        <div class="upcoming-events">
+            <h3>Next Two Months</h3>
+            <div class="events-cards">
+                <!-- EVENT CARD 1 - EDIT HERE -->
+                <div class="event-card">
+                    <div class="event-date">September 20, 2025</div>
+                    <div class="event-title">Investment Calculation I</div>
+                    <div class="event-description">Learn the fundamentals of investment calculations and compound interest.</div>
+                </div>
+                
+                <!-- EVENT CARD 2 - EDIT HERE -->
+                <div class="event-card">
+                    <div class="event-date">October 18, 2025</div>
+                    <div class="event-title">Investment Calculation II</div>
+                    <div class="event-description">Advanced investment strategies and portfolio analysis techniques.</div>
+                </div>
             </div>
         </div>
     </div>
@@ -292,11 +388,11 @@ function generateCalendar(month, year) {
         const events = calendarEvents[dateString] || [];
         
         let eventHTML = '';
-       events.forEach(event => {
-    if (events.length <= 2) {
-        eventHTML += `<div class="event-title-small">${event}</div>`;
-    }
-});
+        events.forEach(event => {
+            if (events.length <= 2) {
+                eventHTML += `<div class="event-title-small">${event}</div>`;
+            }
+        });
         
         calendar += `<div class="day-cell ${isToday ? 'today' : ''}">
             <div class="day-number">${day}</div>
