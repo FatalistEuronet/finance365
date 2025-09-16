@@ -82,5 +82,205 @@
         </div>
     </div>
     <script src="index.js"></script>
+<title>Volunteer - Financial Education 365</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Volunteer container specific styles */
+        .volunteer-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: left;
+            animation: fadeIn 0.8s ease-out;
+            margin: 40px auto;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .volunteer-header {
+            color: #10b981;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .volunteer-intro {
+            color: #555;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #10b981;
+            padding-bottom: 10px;
+        }
+        
+        .step-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        
+        .step-item {
+            background: #f8fffe;
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .step-number {
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .step-content {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 5px;
+        }
+        
+        .bullet-list {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+        
+        .bullet-list li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="page-title">Volunteer</h1>
+    <a href="https://www.financialeducation365.org" class="logo-link">
+        <img src="Screenshot 2025-08-01 173612.png" alt="Logo">
+    </a>
+    <div class="nav-container">
+        <!-- About Dropdown -->
+        <div class="dropdown-container about-dropdown" id="dropdown-about">
+            <button class="dropdown-btn about-btn">
+                <span>About</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="aboutus.html" class="dropdown-item">About Us</a>
+                <a href="ourleaders.html" class="dropdown-item">Our Leaders</a>
+                <a href="contactus.html" class="dropdown-item">Contact Us</a>
+            </div>
+        </div>
+
+        <!-- Attend Dropdown -->
+        <div class="dropdown-container attend-dropdown" id="dropdown-attend">
+            <button class="dropdown-btn attend-btn">
+                <span>Attend</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="upcomingevents.html" class="dropdown-item">Upcoming Events</a>
+            </div>
+        </div>
+
+        <!-- Contribute Dropdown -->
+        <div class="dropdown-container contribute-dropdown" id="dropdown-contribute">
+            <button class="dropdown-btn contribute-btn">
+                <span>Contribute</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="volunteer.html" class="dropdown-item">Volunteer</a>
+                <a href="donate.html" class="dropdown-item">Donate</a>
+            </div>
+        </div>
+
+        <!-- Resources Dropdown -->
+        <div class="dropdown-container resources-dropdown" id="dropdown-resources">
+            <button class="dropdown-btn resources-btn">
+                <span>Resources</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="gallery.html" class="dropdown-item">Gallery</a>
+                <a href="financial-literacy.html" class="dropdown-item">Financial Literacy Resources</a>
+                <a href="leadership-development.html" class="dropdown-item">Leadership Development Resources</a>
+                <a href="career-development.html" class="dropdown-item">Career Development Resources</a>
+            </div>
+        </div>
+
+        <!-- User Dropdown -->
+        <div class="dropdown-container user-dropdown" id="dropdown-user">
+            <button class="dropdown-btn user-btn">
+                <span>User</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="profile.html" class="dropdown-item">Profile</a>
+                <a href="volunteer.html" class="dropdown-item">Volunteer</a>
+                <a href="signout.html" class="dropdown-item">Sign Out</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Volunteer Container Section -->
+    <div class="volunteer-container">
+        <h1 class="volunteer-header">Get Involved</h1>
+        <p class="volunteer-intro">
+            Want to get involved? You're in the right place! Volunteering with Financial Education 365 is a great way to learn new skills, meet other students, and make a difference in your community. You'll also earn volunteer hours for your participation.
+        </p>
+
+        <h2 class="section-title">How to Become a Volunteer</h2>
+        <ol class="step-list">
+            <li class="step-item">
+                <div class="step-number">1. Sign Up</div>
+                <div class="step-content">Create an account by providing your name, school, grade, email, and other relevant information.</div>
+            </li>
+            <li class="step-item">
+                <div class="step-number">2. Confirmation</div>
+                <div class="step-content">We'll contact you by email with more information about getting started.</div>
+            </li>
+            <li class="step-item">
+                <div class="step-number">3. Get Involved</div>
+                <div class="step-content">After you register, you'll be able to sign up for events and activities through our website calendar. We'll also share other ways to volunteer once you've joined, so you can choose what interests you most.</div>
+            </li>
+        </ol>
+
+        <h2 class="section-title">Volunteer Hours</h2>
+        <ul class="bullet-list">
+            <li>Hours from official <span class="highlight">FE365 events</span> will be tracked automatically in our system.</li>
+            <li>If you do additional work outside of events (e.g., video editing, department projects), please track and record those hours on your own.</li>
+        </ul>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
