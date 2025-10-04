@@ -76,6 +76,36 @@
                 <a href="profile.html" class="dropdown-item">Profile</a>
                 <a href="volunteer.html" class="dropdown-item">Volunteer</a>
                 <a href="signout.html" class="dropdown-item">Sign Out</a>
+                <script>
+    // Get all dropdown buttons
+    const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+    
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Get the parent dropdown container
+            const dropdown = this.parentElement;
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown-container').forEach(container => {
+                if (container !== dropdown) {
+                    container.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('active');
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function() {
+        document.querySelectorAll('.dropdown-container').forEach(container => {
+            container.classList.remove('active');
+        });
+    });
+</script>
             </div>
         </div>
     </div>
