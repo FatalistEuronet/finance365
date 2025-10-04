@@ -20,22 +20,37 @@
         .dropdown-container.active .arrow {
             transform: rotate(180deg);
         }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        
+        .mission-header, .vision-header, .values-header, .whatwedo-header {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .mission-text, .vision-text, .values-text, .whatwedo-text {
+            font-size: 1.0em;
+            font-weight: normal;
+            max-width: 800px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
     </style>
 </head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us!</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<!-- ========================================= -->
-<!-- HTML STRUCTURE SECTION                   -->
-<!-- ========================================= -->
 <body>
     <h1 class="page-title">About Us</h1>
     <a href="https://www.financialeducation365.org" class="logo-link">
         <img src="Screenshot 2025-08-01 173612.png" alt="Logo">
     </a>
+    
     <div class="nav-container">
         <!-- About Dropdown -->
         <div class="dropdown-container about-dropdown" id="dropdown-about">
@@ -97,141 +112,71 @@
                 <a href="profile.html" class="dropdown-item">Profile</a>
                 <a href="volunteer.html" class="dropdown-item">Volunteer</a>
                 <a href="signout.html" class="dropdown-item">Sign Out</a>
-                <script>
-    // Get all dropdown buttons
-    const dropdownBtns = document.querySelectorAll('.dropdown-btn');
-    
-    dropdownBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            // Get the parent dropdown container
-            const dropdown = this.parentElement;
-            
-            // Close all other dropdowns
-            document.querySelectorAll('.dropdown-container').forEach(container => {
-                if (container !== dropdown) {
-                    container.classList.remove('active');
-                }
-            });
-            
-            // Toggle current dropdown
-            dropdown.classList.toggle('active');
-        });
-    });
-    
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function() {
-        document.querySelectorAll('.dropdown-container').forEach(container => {
-            container.classList.remove('active');
-        });
-    });
-</script>
             </div>
         </div>
     </div>
-    <script src="index.js"></script>
-        <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            line-height: 1.6;
-        }
-        
-        .mission-header {
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 50px;
-            margin-left: 10000px
-            text-align: left;
-            margin-top: 50px
-        }
 
-        .mission-text {
-            font-size: 1.0em;
-            font-weight: normal;
-            max-width: 800px;
-            text-align: left;
-
-        }
-        .vision-header {
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 50px;
-            margin-left: 10000px
-            text-align: left;
-            margin-top: 50px
-        }
-
-        .vision-text {
-            font-size: 1.0em;
-            font-weight: normal;
-            max-width: 800px;
-            text-align: left;
-
-        }
-        .values-header {
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 50px;
-            margin-left: 10000px
-            text-align: left;
-            margin-top: 50px
-        }
-
-        .values-text {
-            font-size: 1.0em;
-            font-weight: normal;
-            max-width: 800px;
-            text-align: left;
-
-        .whatwedo-header {
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 50px;
-            margin-left: 10000px
-            text-align: left;
-            margin-top: 50px
-        }
-
-        .whatwedo-text {
-            font-size: 1.0em;
-            font-weight: normal;
-            max-width: 800px;
-            text-align: left;
-
-        }
-
-        }
-            
-    </style>
-</head>
-<body>
+    <!-- Content Section -->
     <div class="mission-header">Our Mission</div>
     <div class="mission-text">
         Equip students with financial knowledge and real-world skills so they can make smart decisions, build confidence, and be ready for life after high school
+    </div>
+
     <div class="vision-header">Our Vision</div>
     <div class="vision-text">
-        A future where financial literacy, leadership, and career readiness are part of every student’s toolkit—not just something learned by chance.
+        A future where financial literacy, leadership, and career readiness are part of every student's toolkit—not just something learned by chance.
+    </div>
+
     <div class="values-header">Our Values</div>
     <div class="values-text">
-            - Accessibility: We believe financial education should be for everyone, not just those with access to special classes or resources.<br>
-            - Collaboration: We learn better when we work together and share ideas.<br>
-            - Growth: We challenge ourselves to step up, lead, and keep improving.<br>
-            - Impact: We focus on practical skills that make a difference beyond the classroom.<br>
-            - Creativity: We think outside the box when teaching and problem-solving.
+        - Accessibility: We believe financial education should be for everyone, not just those with access to special classes or resources.<br>
+        - Collaboration: We learn better when we work together and share ideas.<br>
+        - Growth: We challenge ourselves to step up, lead, and keep improving.<br>
+        - Impact: We focus on practical skills that make a difference beyond the classroom.<br>
+        - Creativity: We think outside the box when teaching and problem-solving.
+    </div>
+
     <div class="whatwedo-header">What We Do</div>
     <div class="whatwedo-text">
         Financial Education 365 is a student-led, parent-guided nonprofit that helps middle and high school students build skills for the future. We host workshops, create videos, and run events to make finance, leadership, and career exploration engaging and approachable.
-        Through our website and social media, students can learn:
-            - How to manage money, save, and invest<br>
-            - Leadership skills through team projects and clubs<br>
-            - Career and college insights from guest speakers and mentors<br>
-            - Ways to volunteer and make a positive impact in the community<br>
-        Whether you’re a student looking to grow—or a parent ready to support—we welcome you to join our community.
+        Through our website and social media, students can learn:<br>
+        - How to manage money, save, and invest<br>
+        - Leadership skills through team projects and clubs<br>
+        - Career and college insights from guest speakers and mentors<br>
+        - Ways to volunteer and make a positive impact in the community<br><br>
+        Whether you're a student looking to grow—or a parent ready to support—we welcome you to join our community.
+    </div>
 
+    <!-- JavaScript for dropdowns -->
+    <script>
+        // Get all dropdown buttons
+        const dropdownBtns = document.querySelectorAll('.dropdown-btn');
         
-    
-
+        dropdownBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Get the parent dropdown container
+                const dropdown = this.parentElement;
+                
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown-container').forEach(container => {
+                    if (container !== dropdown) {
+                        container.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
+            });
+        });
         
-    
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.dropdown-container').forEach(container => {
+                container.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
