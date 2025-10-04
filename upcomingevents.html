@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcoming Events!</title>
+    <title>Our Leaders</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .dropdown-container.active .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-container.active .arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,7 +32,7 @@
 <!-- HTML STRUCTURE SECTION                   -->
 <!-- ========================================= -->
 <body>
-    <h1 class="page-title">Upcoming Events</h1>
+    <h1 class="page-title">Our Leaders</h1>
     <a href="https://www.financialeducation365.org" class="logo-link">
         <img src="Screenshot 2025-08-01 173612.png" alt="Logo">
     </a>
@@ -76,10 +97,39 @@
                 <a href="profile.html" class="dropdown-item">Profile</a>
                 <a href="volunteer.html" class="dropdown-item">Volunteer</a>
                 <a href="signout.html" class="dropdown-item">Sign Out</a>
+                <script>
+    // Get all dropdown buttons
+    const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+    
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Get the parent dropdown container
+            const dropdown = this.parentElement;
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown-container').forEach(container => {
+                if (container !== dropdown) {
+                    container.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('active');
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function() {
+        document.querySelectorAll('.dropdown-container').forEach(container => {
+            container.classList.remove('active');
+        });
+    });
+</script>
             </div>
         </div>
     </div>
-    <script src="index.js"></script>
     
     <!-- Add this CSS to your existing <style> section or style.css file -->
 <style>
