@@ -1,1 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
+        .dropdown-container.active .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-container.active .arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- ========================================= -->
+<!-- HTML STRUCTURE SECTION                   -->
+<!-- ========================================= -->
+<body>
+    <h1 class="page-title">Our Leaders</h1>
+    <a href="https://www.financialeducation365.org" class="logo-link">
+        <img src="/media/logo" alt="Logo">
+    </a>
+    <div class="nav-container">
+        <!-- About Dropdown -->
+        <div class="dropdown-container about-dropdown" id="dropdown-about">
+            <button class="dropdown-btn about-btn">
+                <span>About</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="/about/aboutus.html" class="dropdown-item">About Us</a>
+                <a href="/about/ourleaders.html" class="dropdown-item">Our Leaders</a>
+                <a href="/about/contactus.html" class="dropdown-item">Contact Us</a>
+            </div>
+        </div>
+
+        <!-- Attend Dropdown -->
+        <div class="dropdown-container attend-dropdown" id="dropdown-attend">
+            <button class="dropdown-btn attend-btn">
+                <span>Attend</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="/attend/upcomingevents.html" class="dropdown-item">Upcoming Events</a>
+            </div>
+        </div>
+
+        <!-- Contribute Dropdown -->
+        <div class="dropdown-container contribute-dropdown" id="dropdown-contribute">
+            <button class="dropdown-btn contribute-btn">
+                <span>Contribute</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="/contribute/volunteer.html" class="dropdown-item">Volunteer</a>
+                <a href="/contribute/donate.html" class="dropdown-item">Donate</a>
+            </div>
+        </div>
+
+        <!-- Resources Dropdown -->
+        <div class="dropdown-container resources-dropdown" id="dropdown-resources">
+            <button class="dropdown-btn resources-btn">
+                <span>Resources</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="/resources/gallery.html" class="dropdown-item">Gallery</a>
+                <a href="/resources/financial-literacy.html" class="dropdown-item">Financial Literacy Resources</a>
+                <a href="/resources/leadership-development.html" class="dropdown-item">Leadership Development Resources</a>
+                <a href="/resources/career-development.html" class="dropdown-item">Career Development Resources</a>
+            </div>
+        </div>
+
+        <!-- User Dropdown -->
+        <div class="dropdown-container user-dropdown" id="dropdown-user">
+            <button class="dropdown-btn user-btn">
+                <span>User</span>
+                <div class="arrow"></div>
+            </button>
+            <div class="dropdown-menu">
+                <a href="/user/profile.html" class="dropdown-item">Profile</a>
+                <a href="/user/volunteer.html" class="dropdown-item">Volunteer</a>
+                <a href="/user/signout.html" class="dropdown-item">Sign Out</a>
+                <a href="/user/login.html" class="dropdown-item">Login</a>
+                <a href="/user/register.html" class="dropdown-item">Register</a>
+            </div>
+        </div>
+    </div>
+    <script>
+    // Get all dropdown buttons
+    const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+    
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Get the parent dropdown container
+            const dropdown = this.parentElement;
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown-container').forEach(container => {
+                if (container !== dropdown) {
+                    container.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('active');
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function() {
+        document.querySelectorAll('.dropdown-container').forEach(container => {
+            container.classList.remove('active');
+        });
+    });
+</script>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
