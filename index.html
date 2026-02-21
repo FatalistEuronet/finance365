@@ -5,8 +5,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Education 365!</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    <style>
+        /* ========================================= */
+        /* HOME PAGE SECTIONS - Added Styles         */
+        /* ========================================= */
 
+        /* Welcome / Hero Section */
+        .home-hero {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 50px 60px 40px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .home-hero-text {
+            flex: 1;
+        }
+
+        .home-hero-text h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            color: #1a1a1a;
+        }
+
+        .home-hero-text p {
+            font-size: 1.05rem;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .home-hero-image {
+            flex: 1;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.55);
+            border-radius: 16px;
+            border: 2px dashed rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 1.1rem;
+            font-style: italic;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        /* Statistics Section */
+        .home-stats-wrapper {
+            padding: 10px 60px 40px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .home-stats-box {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 50px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 80px;
+            background: #e0e0e0;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #4CAF50;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .stat-stars {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .star {
+            font-size: 2rem;
+            color: #e0e0e0;
+        }
+
+        .star.filled {
+            color: #FFD700;
+        }
+
+        .star.half-filled {
+            background: linear-gradient(90deg, #FFD700 50%, #e0e0e0 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Shared Section Styles */
+        .home-section {
+            padding: 10px 60px 40px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .home-section h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0 0 20px 0;
+        }
+
+        .card-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .placeholder-card {
+            flex: 1;
+            height: 160px;
+            background: rgba(255, 255, 255, 0.55);
+            border-radius: 14px;
+            border: 2px dashed rgba(255,255,255,0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 0.95rem;
+            font-style: italic;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+        }
+
+        /* Get Involved Section */
+        .home-get-involved {
+            padding: 10px 60px 40px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .home-get-involved h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0 0 20px 0;
+        }
+
+        .involve-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .involve-btn {
+            flex: 1;
+            padding: 18px 20px;
+            background: white;
+            border: 2px solid rgba(255,255,255,0.9);
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #2e7d32;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .involve-btn:hover {
+            background: #f1fdf1;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        /* Footer / Social Section */
+        .home-footer {
+            border-top: 1px solid rgba(255,255,255,0.5);
+            margin-top: 20px;
+            padding: 30px 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .home-footer p {
+            font-size: 1rem;
+            color: #444;
+            font-weight: 500;
+            margin: 0 0 14px 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .social-link {
+            padding: 10px 22px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 30px;
+            text-decoration: none;
+            color: #2e7d32;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.85);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .social-link:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
 <!-- ========================================= -->
 <!-- HTML STRUCTURE SECTION                   -->
 <!-- ========================================= -->
@@ -28,7 +261,6 @@
                 <a href="about/contactus.html" class="dropdown-item">Contact Us</a>
             </div>
         </div>
-
         <!-- Attend Dropdown -->
         <div class="dropdown-container attend-dropdown" id="dropdown-attend">
             <button class="dropdown-btn attend-btn">
@@ -39,7 +271,6 @@
                 <a href="attend/upcomingevents.html" class="dropdown-item">Upcoming Events</a>
             </div>
         </div>
-
         <!-- Contribute Dropdown -->
         <div class="dropdown-container contribute-dropdown" id="dropdown-contribute">
             <button class="dropdown-btn contribute-btn">
@@ -51,7 +282,6 @@
                 <a href="contribute/donate.html" class="dropdown-item">Donate</a>
             </div>
         </div>
-
         <!-- Resources Dropdown -->
         <div class="dropdown-container resources-dropdown" id="dropdown-resources">
             <button class="dropdown-btn resources-btn">
@@ -65,7 +295,6 @@
                 <a href="resources/career-development.html" class="dropdown-item">Career Development Resources</a>
             </div>
         </div>
-
         <!-- User Dropdown -->
         <div class="dropdown-container user-dropdown" id="dropdown-user">
             <button class="dropdown-btn user-btn">
@@ -81,6 +310,140 @@
             </div>
         </div>
     </div>
+
+    <!-- ========================================= -->
+    <!-- HOME PAGE CONTENT SECTIONS               -->
+    <!-- ========================================= -->
+
+    <!-- Welcome / Hero -->
+    <div class="home-hero">
+        <div class="home-hero-text">
+            <h2>Welcome!</h2>
+            <p>Very short summary on who we are — a placeholder for your organization's mission statement and introduction. Tell visitors what Financial Education 365 is all about!</p>
+        </div>
+        <div class="home-hero-image">Picture / Banner Image</div>
+    </div>
+
+    <!-- Statistics -->
+    <div class="home-stats-wrapper">
+        <div class="home-stats-box">
+            <div class="stat-item">
+                <div class="stat-number" id="stat-events">0</div>
+                <div class="stat-label">Events Hosted</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-number" id="stat-people">0</div>
+                <div class="stat-label">People Impacted</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-stars" id="star-display">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <div class="stat-label">Average Rating</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Events -->
+    <div class="home-section">
+        <h2>Upcoming Events</h2>
+        <div class="card-row">
+            <div class="placeholder-card">Event Card 1</div>
+            <div class="placeholder-card">Event Card 2</div>
+            <div class="placeholder-card">Event Card 3</div>
+        </div>
+    </div>
+
+    <!-- Past Event Highlights -->
+    <div class="home-section">
+        <h2>Past Event Highlights</h2>
+        <div class="card-row">
+            <div class="placeholder-card">Past Event 1</div>
+            <div class="placeholder-card">Past Event 2</div>
+            <div class="placeholder-card">Past Event 3</div>
+        </div>
+    </div>
+
+    <!-- Get Involved -->
+    <div class="home-get-involved">
+        <h2>Get Involved!</h2>
+        <div class="involve-buttons">
+            <a href="contribute/volunteer.html" class="involve-btn">🙋 Volunteer</a>
+            <a href="contribute/donate.html" class="involve-btn">💚 Donate</a>
+            <a href="attend/upcomingevents.html" class="involve-btn">📅 Attend Events</a>
+        </div>
+    </div>
+
+    <!-- Footer / Social Media -->
+    <div class="home-footer">
+        <p>Follow us on social media &amp; other platforms</p>
+        <div class="social-links">
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">YouTube</a>
+        </div>
+    </div>
+
     <script src="index.js"></script>
+    <script>
+        /* ========================================= */
+        /* STATISTICS ANIMATION & STAR RATING        */
+        /* ========================================= */
+
+        // --- Configuration: update these values ---
+        const EVENTS_HOSTED = 42;       // Replace with your real number
+        const PEOPLE_IMPACTED = 1500;   // Replace with your real number
+        const AVERAGE_RATING = 4.5;     // Replace with your real rating (0–5)
+        // ------------------------------------------
+
+        // Animate count-up
+        function animateCount(el, target, duration = 1500) {
+            let start = 0;
+            const step = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += step;
+                if (start >= target) {
+                    el.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    el.textContent = Math.floor(start).toLocaleString();
+                }
+            }, 16);
+        }
+
+        // Render stars
+        function renderStars(rating) {
+            const container = document.getElementById('star-display');
+            container.innerHTML = '';
+            for (let i = 1; i <= 5; i++) {
+                const star = document.createElement('span');
+                star.classList.add('star');
+                if (i <= Math.floor(rating)) {
+                    star.classList.add('filled');
+                    star.innerHTML = '&#9733;';
+                } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
+                    star.classList.add('half-filled');
+                    star.innerHTML = '&#9733;';
+                } else {
+                    star.innerHTML = '&#9733;';
+                }
+                container.appendChild(star);
+            }
+        }
+
+        // Run on load
+        window.addEventListener('load', () => {
+            animateCount(document.getElementById('stat-events'), EVENTS_HOSTED);
+            animateCount(document.getElementById('stat-people'), PEOPLE_IMPACTED);
+            renderStars(AVERAGE_RATING);
+        });
+    </script>
 </body>
 </html>
