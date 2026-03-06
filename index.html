@@ -443,5 +443,26 @@
             renderStars(AVERAGE_RATING);
         });
     </script>
+                <script>
+    // Dropdown toggle logic
+    document.querySelectorAll('.dropdown-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const container = this.closest('.dropdown-container');
+            const isOpen = container.classList.contains('open');
+
+            // Close all dropdowns
+            document.querySelectorAll('.dropdown-container').forEach(d => d.classList.remove('open'));
+
+            // Toggle the clicked one
+            if (!isOpen) container.classList.add('open');
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.dropdown-container').forEach(d => d.classList.remove('open'));
+    });
+</script>
 </body>
 </html>
