@@ -99,7 +99,7 @@
         }
 
         /* Active Button State */
-        .dropdown-container.active .dropdown-btn {
+        .dropdown-container.open .dropdown-btn {
             background: linear-gradient(145deg, #4a90e2, #357abd);
             color: white;
             transform: translateY(-2px);
@@ -117,7 +117,7 @@
             transform-origin: center center;
         }
 
-        .dropdown-container.active .arrow {
+        .dropdown-container.open .arrow {
             transform: rotate(180deg);
             border-top-color: white;
         }
@@ -144,7 +144,7 @@
             white-space: nowrap;
         }
 
-        .dropdown-container.active .dropdown-menu {
+        .dropdown-container.open .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
