@@ -198,7 +198,7 @@ class NavigationDropdown {
                 this.isAnimating = true;
                 this.activeDropdown = container;
                 
-                container.classList.add('active');
+                container.classList.add('open');
                 const button = container.querySelector('.dropdown-btn');
                 button.setAttribute('aria-expanded', 'true');
                 
@@ -227,7 +227,7 @@ class NavigationDropdown {
                 
                 this.isAnimating = true;
                 
-                container.classList.remove('active');
+                container.classList.remove('open');
                 const button = container.querySelector('.dropdown-btn');
                 button.setAttribute('aria-expanded', 'false');
                 
