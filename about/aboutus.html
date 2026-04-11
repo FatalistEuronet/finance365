@@ -148,19 +148,19 @@
                 // Close all other dropdowns
                 document.querySelectorAll('.dropdown-container').forEach(container => {
                     if (container !== dropdown) {
-                        container.classList.remove('active');
+                        container.classList.remove('open');
                     }
                 });
                 
                 // Toggle current dropdown
-                dropdown.classList.toggle('active');
+                dropdown.classList.toggle('open');
             });
         });
         
         // Close dropdowns when clicking outside
         document.addEventListener('click', function() {
             document.querySelectorAll('.dropdown-container').forEach(container => {
-                container.classList.remove('active');
+                container.classList.remove('open');
             });
         });
     </script>
